@@ -59,7 +59,32 @@ var board = {
   ]
 }
 
+/*
 
+I couldn't get this to work :( 
+
+var board = {cells:[]}
+var boardSize = 6;
+
+
+function makeBoard () { 
+
+  
+for (width = 0; width < boardSize; width++) {
+  for (hight = 0; hight < boardSize; hight++) {
+    board.cells.push ( {
+      row: width,
+      col: hight,
+      isMine:  Math.random()<0.5,
+      isMarked: false,
+      hidden: true
+    
+    }
+  )
+  }
+}
+}
+*/
 
 
 function startGame() {
@@ -81,7 +106,7 @@ function startGame() {
 function checkForWin() {
   for (i = 0; i < board.cells.length; i++) {
 
-    if (!board.cells[i].isMarked && board.cells[i].isMine) {
+    if (board.cells[i].isMarked && board.cells[i].isMine) {
       return;
     }
     if (!board.cells[i].isMine && board.cells[i].hidden) {
@@ -91,7 +116,6 @@ function checkForWin() {
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
   lib.displayMessage('You win')
-
 }
 
 
