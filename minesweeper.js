@@ -9,11 +9,11 @@ var boardSize = 6;
 
 
 function generateBoard() {
-  for (var x = 0; x < boardSize; x++) {
-    for (var y = 0; y < boardSize; y++) {
+  for (var width = 0; width < boardSize; width++) {
+    for (var hight = 0; hight < boardSize; hight++) {
       board.cells.push ({
-        row: y,
-        col: x,
+        row: hight,
+        col: width,
         isMine: Math.random() >= 0.6,
         isMarked: false,
         hidden: true,
